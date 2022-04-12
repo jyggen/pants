@@ -20,12 +20,12 @@ grpc_util = { path = "../grpc_util" }
 fs = { path = "../fs" }
 futures = "0.3"
 hashing = { path = "../hashing" }
-libc = "0.2.112"
+libc = "0.2.122"
 log = "0.4"
 nails = "0.12"
 nix = "0.23"
 sha2 = "0.10"
-shell-quote = "0.1.0"
+shell-quote = "0.3.0"
 store = { path = "../fs/store" }
 task_executor = { path = "../task_executor" }
 tempfile = "3"
