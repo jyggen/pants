@@ -3,12 +3,8 @@
 
 from __future__ import annotations
 
-import ast
 import dataclasses
-import os
 from dataclasses import dataclass
-
-import pytest
 
 from pants.build_graph.address import Address
 from pants.core.util_rules import system_binaries
@@ -24,11 +20,6 @@ from pants.jvm.classpath import Classpath
 from pants.jvm.compile import ClasspathEntry
 from pants.jvm.resolve.key import CoursierResolveKey
 from pants.testutil.rule_runner import RuleRunner
-
-
-def maybe_skip_jdk_test(func):
-    run_jdk_tests = bool(ast.literal_eval(os.environ.get("PANTS_RUN_JDK_TESTS", "True")))
-    return pytest.mark.skipif(not run_jdk_tests, reason="Skip JDK tests")(func)
 
 
 def expect_single_expanded_coarsened_target(
